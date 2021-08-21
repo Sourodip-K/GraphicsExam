@@ -5,21 +5,16 @@ import javax.swing.JFrame;
 
 public class Draw extends Canvas {
 
-//    int x1 = 50,y1 = 50,x2 = 200,y2 = 100;
-//    int line_x1 = 0;
-//    int line_y1 = 0;
-//    int line_x2 = 300;
-//    int line_y2 = 300;
 
     public void paint(Graphics graphics) {
 
         // Taking inputs
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter Rect upper left corner");
+        System.out.println("Enter Rectangle's upper left corner");
         int x1 = Integer.parseInt(sc.nextLine());
         int y1 = Integer.parseInt(sc.nextLine());
 
-        System.out.println("Enter Rect lower right corner");
+        System.out.println("Enter Rectangle's lower right corner");
         int x2 = Integer.parseInt(sc.nextLine());
         int y2 = Integer.parseInt(sc.nextLine());
 
