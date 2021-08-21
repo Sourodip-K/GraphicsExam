@@ -8,17 +8,17 @@ public class Draw extends Canvas {
 
     public void paint(Graphics graphics) {
 
-        // Taking inputs
+        // Asking the user for inputs
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter Rectangle's upper left corner");
+        System.out.println("Enter Rectangle's upper left corner: ");
         int x1 = Integer.parseInt(sc.nextLine());
         int y1 = Integer.parseInt(sc.nextLine());
 
-        System.out.println("Enter Rectangle's lower right corner");
+        System.out.println("Enter Rectangle's lower right corner: ");
         int x2 = Integer.parseInt(sc.nextLine());
         int y2 = Integer.parseInt(sc.nextLine());
 
-        System.out.println("Enter line starting point");
+        System.out.println("Enter the starting point of the line: ");
         int line_x1 = Integer.parseInt(sc.nextLine());
         int line_y1 = Integer.parseInt(sc.nextLine());
 
@@ -28,12 +28,16 @@ public class Draw extends Canvas {
 
         int height = y2 - y1;
         int width = x2 - x1;
-        System.out.println("Enter x direction translation factor:");
-        int trans_x=sc.nextInt();
-        System.out.println("Enter y direction translation factor:");
-        int trans_y=sc.nextInt();
+        
+        //Translation
+        System.out.println("Enter translation factor in x direction:");
+        int translation_x=sc.nextInt();
+        System.out.println("Enter translation factor in y direction:");
+        int translation_y=sc.nextInt();
+        
         graphics.setColor(Color.BLACK);
-        graphics.drawRect(x1+trans_x, y1+trans_y, width, height);
+        //Rectangle is drawn after translation
+        graphics.drawRect(x1+translation_x, y1+translation_y, width, height);
 
         // Before entering the rectangle
         float m = (line_y2 - line_y1)/(line_x2 - line_x1);
@@ -59,7 +63,7 @@ public class Draw extends Canvas {
     	Draw m = new Draw();
         JFrame frame = new JFrame();
         frame.add(m);
-        frame.setSize(500,500);
+        frame.setSize(700,700);
         frame.setVisible(true);
 
     }
